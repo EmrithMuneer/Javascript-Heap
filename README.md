@@ -67,7 +67,7 @@ pq.offer([1,3]);
 while(!pq.isEmpty()) {
     console.log(pq.poll());
 }
-// Returns
+// Print
 // [ 8, 3 ]
 // [ 3, 4 ]
 // [ 1, 7 ]
@@ -91,7 +91,7 @@ obj.forEach(o => {
 while(!pq.isEmpty()) {
     console.log(pq.poll());
 }
-// Returns
+// Print
 // { name: 'Mary', penalty: 24 }
 // { name: 'Paul', penalty: 45 }
 // { name: 'John', penalty: 67 }
