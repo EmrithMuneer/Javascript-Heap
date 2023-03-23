@@ -27,6 +27,11 @@ var pq = new Heap();
 The queue will be sorted according to their natural order i.e ascending unless provided with a comparator.
 ```javascript
 var pq = new Heap((a, b) => {
+    // sorting in ascending order (default)
+    return a - b;
+});
+
+var pq = new Heap((a, b) => {
     // sorting in descending order
     return b - a;
 });
