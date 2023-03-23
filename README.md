@@ -52,9 +52,9 @@ pq.poll() // returns 23
 ```
 
 # Using comparators
-### Array or Arrays
+### Multi dimensional Array
 ```javascript
-// Initialise priority queue to sort Array of Arrays in descending order
+// Initialise priority queue to sort a 2D Array in descending order
 var pq = new Heap((a, b) => {
     return a[0] == b[0] ? b[1] - a[1] : b[0] - a[0];
 });
