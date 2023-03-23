@@ -24,7 +24,7 @@ Download the library from the github or copy paste the code in a file and save i
 ```javascript
 var pq = new Heap();
 ```
-The queue will be sorted according to their natural order i.e ascending unless provided with a comparator.
+The queue will be sorted according to their natural order i.e ascending unless provided with a comparator. Comparator should return a negative value if `a` is smaller than `b`, 0 if both are equal and a positive value if `a` is greater than `b`.
 ```javascript
 var pq = new Heap((a, b) => {
     // sorting in ascending order (default)
