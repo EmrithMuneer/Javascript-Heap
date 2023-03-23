@@ -5,7 +5,7 @@ class Heap {
      */
     constructor(compareFn) {
         this.queue = [];
-        this.size = 0;
+        this.sz = 0;
         this.compareFn = compareFn || 
         // default comparator function
         function(a, b) {
@@ -21,7 +21,7 @@ class Heap {
         if(val == undefined) {
             throw('NullPointerException')
         }
-        this.#siftUp(this.size++, val);
+        this.#siftUp(this.sz++, val);
     }
 
     /**
@@ -32,11 +32,11 @@ class Heap {
             return null;
         }
         var res = this.queue[0];
-        var v = this.queue[--this.size];
+        var v = this.queue[--this.sz];
         // free space
-        this.queue[this.size] = undefined;
+        this.queue[this.sz] = undefined;
 
-        if(this.size > 0) {
+        if(this.sz > 0) {
             this.#siftDown(v);
         }
         return res;
@@ -56,14 +56,14 @@ class Heap {
      * Returns true if the queue is empty
      */
     isEmpty() {
-        return this.size == 0;
+        return this.sz == 0;
     }
 
     /**
      * Returns the number of elements in the queue
      */
     size() {
-        return this.size;
+        return this.sz;
     }
 
     /**
