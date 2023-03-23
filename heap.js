@@ -93,7 +93,7 @@ class Heap {
      */
     #siftDown(v) {
         var q = this.queue;
-        var n = this.size, h = n >> 1;
+        var n = this.sz, h = n >> 1;
         var x = 0;
         while(x < h) {
             var c = (x << 1) + 1;
