@@ -1,6 +1,7 @@
 class Heap {
     /**
      * @param {Function} compareFn - Comparator function
+     * The comparator is used to order the elements in the queue
      */
     constructor(compareFn) {
         this.queue = [];
@@ -13,15 +14,18 @@ class Heap {
     }
 
     /**
-     * This method add a new value to the queue
      * @param {Any} val
+     * Inserts the specified element into this priority queue. Throws null pointer exception if value is null
      */
     offer(val) {
+        if(val == undefined) {
+            throw('NullPointerException')
+        }
         this.#siftUp(this.size++, val);
     }
 
     /**
-     * This method returns and delete the top element from the queue
+     * Retrieves and removes the head of the queue, or returns null if queue is empty
      */
     poll() {
         if(this.isEmpty()) {
@@ -39,8 +43,7 @@ class Heap {
     }
 
     /**
-     * This method returns the top element from the queue
-     * @returns 
+     * Retrieves, but does not remove, the head of the queue, or returns null if queue is empty
      */
     peek() {
         if(this.isEmpty()) {
@@ -49,12 +52,23 @@ class Heap {
         return this.queue[0];
     }
 
+    /**
+     * Returns true if the queue is empty
+     */
     isEmpty() {
         return this.size == 0;
     }
 
     /**
-     * 
+     * Returns the number of elements in the queue
+     */
+    size() {
+        return this.size;
+    }
+
+    /**
+     * Private method
+     * siftUp swaps a node that is too large with its parent until it is not larger than the node above it
      * @param {int} x - index where the new element goes in
      * @param {Any} v - value
      */
@@ -73,7 +87,8 @@ class Heap {
     }
 
     /**
-     * 
+     * Private method
+     * siftDown swaps the node that is too small with its largest child until it is at least as large as both nodes below it
      * @param {Any} v - value
      */
     #siftDown(v) {
